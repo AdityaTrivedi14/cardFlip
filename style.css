@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117;
+  height: 100vh;
+  overflow: hidden;
+}
+.card {
+  width: 340px;
+  height: 475px;
+  cursor: pointer;
+}
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.front img {
+  width: 340px;
+  height: 475px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #000;
+}
+.front,
+.back {
+  width: 340px;
+  height: 475px;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #000;
+  transition: transform 1s linear;
+}
+.front {
+  transform: perspective(600px) rotateY(0deg);
+}
+.back {
+  background: #ececec;
+  transform: perspective(600px) rotateY(180deg);
+}
+.content {
+  text-align: center;
+  color: #333;
+  width: 100%;
+}
+.s-media {
+  margin: 45px 0;
+}
+.s-media a {
+  text-decoration: none;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 20px;
+  transition: 0.4s;
+  margin-right: 10px;
+  border-radius: 50%;
+  padding: 1px;
+}
+.s-media a:hover {
+  background: #333;
+  color: #fff;
+}
+h3 {
+  text-align: center;
+  color: red;
+  width: 130px;
+  padding: 5px;
+  border-radius: 8px;
+  margin-left: 25%;
+}
+h3:hover {
+  color: #fff;
+  background: red;
+}
+.card:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
+}
